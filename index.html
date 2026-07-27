@@ -4,26 +4,31 @@
 <head>
 
 <meta charset="UTF-8">
-
 <title>真日聖會 官方網站</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
 
-    background:#000000;
-
+    background:#000;
     color:#FFD700;
-
     font-family:"PMingLiU","新細明體",serif;
 
     margin:0;
+    padding-top:70px;
 
     text-align:center;
 
-    image-rendering:pixelated;
+    overflow-x:hidden;
 
 }
+
 
 /* CRT掃描線 */
 
@@ -34,62 +39,24 @@ content:"";
 position:fixed;
 
 left:0;
-
 top:0;
 
 width:100%;
-
 height:100%;
 
 pointer-events:none;
 
 background:repeating-linear-gradient(
-
 0deg,
-
-rgba(255,255,255,.03) 0px,
-
-rgba(255,255,255,.03) 2px,
-
+rgba(255,255,255,.04) 0px,
+rgba(255,255,255,.04) 2px,
 transparent 4px
-
 );
 
-opacity:.25;
+opacity:.3;
 
 }
 
-/* 主框 */
-
-.main{
-
-margin:auto;
-
-margin-top:60px;
-
-width:900px;
-
-background:#111;
-
-border:3px ridge gray;
-
-padding:25px;
-
-box-shadow:0 0 25px #333;
-
-}
-
-/* Logo */
-
-h1{
-
-font-size:60px;
-
-margin-bottom:5px;
-
-text-shadow:0px 0px 15px orange;
-
-}
 
 /* 跑馬燈 */
 
@@ -99,35 +66,131 @@ background:#330000;
 
 color:white;
 
-padding:8px;
+padding:10px;
 
 font-size:18px;
 
-border-top:1px solid #666;
-
-border-bottom:1px solid #666;
+border-top:1px solid #777;
+border-bottom:1px solid #777;
 
 }
 
-/* 有緣人 */
+
+/* 主框 */
+
+.main{
+
+width:900px;
+
+max-width:90%;
+
+margin:60px auto;
+
+background:#111;
+
+border:3px ridge gray;
+
+padding:35px;
+
+box-shadow:
+0 0 20px #333,
+0 0 50px #111;
+
+}
+
+
+/* 標題 */
+
+h1{
+
+font-size:60px;
+
+margin:10px;
+
+text-shadow:
+0 0 10px orange,
+0 0 30px red;
+
+animation:flicker 3s infinite;
+
+}
+
+
+h2{
+
+color:white;
+
+font-size:26px;
+
+font-weight:normal;
+
+}
+
+
+/* 閃爍 */
+
+@keyframes flicker{
+
+0%,18%,22%,60%,100%{
+opacity:1;
+}
+
+20%,61%{
+opacity:.5;
+}
+
+}
+
+
+/* 文字 */
+
+.intro{
+
+font-size:25px;
+
+color:white;
+
+line-height:2;
+
+}
+
+
+/* 人數 */
 
 .counter{
 
-margin-top:40px;
+margin-top:50px;
 
 font-size:28px;
 
 }
 
+
 .number{
 
-font-size:58px;
+font-size:60px;
 
 color:white;
 
-text-shadow:0 0 10px red;
+text-shadow:
+
+0 0 10px red;
 
 }
+
+
+
+/* checkbox */
+
+label{
+
+font-size:22px;
+
+color:#ddd;
+
+}
+
+
 
 /* 按鈕 */
 
@@ -135,27 +198,39 @@ button{
 
 margin-top:35px;
 
-padding:12px 45px;
+padding:15px 50px;
 
 font-size:22px;
 
 font-family:"PMingLiU";
 
-background:#C0C0C0;
+background:#c0c0c0;
 
-border:2px outset white;
+border:3px outset white;
 
 cursor:pointer;
 
 }
 
-button:active{
 
-border:2px inset white;
+button:hover{
+
+box-shadow:
+
+0 0 20px red;
 
 }
 
-/* 底部 */
+
+button:active{
+
+border:3px inset white;
+
+}
+
+
+
+/* footer */
 
 .footer{
 
@@ -163,61 +238,116 @@ margin-top:50px;
 
 font-size:15px;
 
-color:#888;
+color:#777;
 
 }
+
+
+
+/* 進入動畫 */
+
+.flash{
+
+animation:flash .5s;
+
+}
+
+
+@keyframes flash{
+
+from{
+filter:brightness(5);
+}
+
+to{
+filter:brightness(1);
+}
+
+}
+
 
 </style>
 
 </head>
 
+
+
 <body>
+
+
 
 <marquee scrollamount="5">
 
-★ 真日聖會 官方網站 ★ 真理只屬於真正的有緣人 ★ 本網站內容禁止外流 ★ 每位信徒皆須完成海星計畫 ★ 未經允許請勿離開真光 ★
+★ 真日聖會 官方網站 ★　
+真光正在等待有緣人　
+★ 1998 年建立 ★　
+資料僅供虛構世界觀使用 ★
 
 </marquee>
 
+
+
 <div class="main">
 
-<h1>☀ 真日聖會 ☀</h1>
+
+<h1>
+☀ 真日聖會 ☀
+</h1>
+
 
 <hr>
 
-<p style="font-size:26px;color:white;">
+
+
+<h2>
 
 真正的光，不屬於所有人。
 
+</h2>
+
+
+
+<p class="intro">
+
+歡迎來到真日聖會官方網站。<br>
+
+只有通過試煉者，才能看見真光。
+
 </p>
 
-<p>
 
-歡迎來到真日聖會官方網站。
-
-</p>
 
 <div class="counter">
 
 你是第
 
-<div class="number" id="people"></div>
+<div class="number" id="people">
+00000
+</div>
 
-位有緣人
+位訪客
 
 </div>
 
-<br>
 
-<label style="font-size:22px;">
+
+<br><br>
+
+
+
+<label>
 
 <input type="checkbox" id="agree">
 
-我願接受真光，遵循教義。
+我願閱讀真日聖會公開資料。
 
 </label>
 
+
+
 <br>
+
+
 
 <button id="enter" disabled>
 
@@ -225,29 +355,47 @@ color:#888;
 
 </button>
 
+
+
+
 <div class="footer">
 
 <hr>
 
 Since 1998<br>
 
-Only The Chosen Can Enter.
+The Truth Awaits.
 
 </div>
 
+
+
 </div>
+
+
+
+
 
 <script>
 
+
+// 假訪客數
+
 let n=Math.floor(Math.random()*4000)+25000;
 
-document.getElementById("people").innerHTML=n.toLocaleString();
+document.getElementById("people").innerHTML=
+n.toLocaleString();
+
+
 
 let agree=document.getElementById("agree");
 
 let btn=document.getElementById("enter");
 
+
+
 agree.onchange=function(){
+
 
 if(this.checked){
 
@@ -257,29 +405,53 @@ btn.style.background="#660000";
 
 btn.style.color="white";
 
-}else{
+
+}
+
+else{
+
 
 btn.disabled=true;
 
-btn.style.background="#C0C0C0";
+btn.style.background="#c0c0c0";
 
 btn.style.color="black";
 
-}
 
 }
+
+
+};
+
+
+
+
 
 btn.onclick=function(){
 
+
+document.body.classList.add("flash");
+
+
+setTimeout(function(){
+
 window.location.href="home.html";
 
-}
+},500);
 
-// 每8秒畫面閃一下
+
+};
+
+
+
+
+// CRT故障閃爍
 
 setInterval(function(){
 
-document.body.style.opacity="0.93";
+
+document.body.style.opacity="0.92";
+
 
 setTimeout(function(){
 
@@ -287,102 +459,15 @@ document.body.style.opacity="1";
 
 },100);
 
+
+
 },8000);
 
-</script>
 
-</body>
-
-</html>
-    font-size:35px;
-    color:#ff4444;
-}
-
-.number{
-    font-size:55px;
-    color:white;
-}
-
-button{
-
-    margin-top:50px;
-
-    background:#660000;
-
-    color:white;
-
-    border:none;
-
-    padding:18px 45px;
-
-    font-size:26px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-}
-
-button:hover{
-
-    background:red;
-
-    transform:scale(1.08);
-
-}
-
-.footer{
-
-    margin-top:80px;
-
-    color:gray;
-
-    font-size:18px;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1>☀ 真日聖會 ☀</h1>
-
-<h2>真理並非尋找，而是被選中。</h2>
-
-<div class="counter">
-
-你是第
-
-<div class="number" id="count"></div>
-
-位有緣人。
-
-</div>
-
-<button onclick="location.href='home.html'">
-
-接受真光
-
-</button>
-
-<div class="footer">
-
-Since 1998<br>
-
-Only The Chosen Can Enter.
-
-</div>
-
-<script>
-
-// 隨機訪客數
-let visitor = Math.floor(Math.random()*5000)+25000;
-
-document.getElementById("count").innerHTML=visitor.toLocaleString();
 
 </script>
+
+
 
 </body>
 
