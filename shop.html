@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>真日聖會 - 法器購買</title>
+
+
+<style>
+
+body{
+
+background:black;
+
+color:white;
+
+font-family:"Microsoft JhengHei";
+
+text-align:center;
+
+padding:40px;
+
+}
+
+
+.box{
+
+width:950px;
+
+max-width:90%;
+
+margin:auto;
+
+background:#111;
+
+border:3px ridge gray;
+
+padding:40px;
+
+box-shadow:0 0 30px #333;
+
+}
+
+
+
+h1{
+
+color:#FFD700;
+
+font-size:45px;
+
+text-shadow:0 0 15px orange;
+
+}
+
+
+
+.item{
+
+background:#080808;
+
+border:1px solid #666;
+
+margin:25px;
+
+padding:20px;
+
+font-size:20px;
+
+}
+
+
+
+.price{
+
+color:#ff4444;
+
+font-size:25px;
+
+}
+
+
+
+button{
+
+padding:8px 18px;
+
+font-size:18px;
+
+margin:5px;
+
+cursor:pointer;
+
+}
+
+
+
+.cart{
+
+border-top:2px solid gray;
+
+margin-top:40px;
+
+padding-top:30px;
+
+font-size:22px;
+
+}
+
+
+
+input{
+
+font-size:18px;
+
+padding:8px;
+
+margin:8px;
+
+}
+
+
+
+.red{
+
+color:red;
+
+}
+
+
+
+#complete{
+
+display:none;
+
+font-size:28px;
+
+color:#FFD700;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="box">
+
+
+<h1>
+
+☀ 真日聖會・法器購買處 ☀
+
+</h1>
+
+
+<hr>
+
+
+<p>
+
+「只有完成確認者，才能取得專屬法器。」
+
+</p>
+
+
+
+<div class="item">
+
+<h2>晨光之鏡</h2>
+
+<p>
+
+用於觀察每日光象變化。
+
+</p>
+
+<div class="price">
+
+價格：88,888 元
+
+</div>
+
+<button onclick="change(0,-1)">－</button>
+
+<span id="q0">0</span>
+
+<button onclick="change(0,1)">＋</button>
+
+</div>
+
+
+
+
+<div class="item">
+
+<h2>八相之印</h2>
+
+<p>
+
+傳說記錄教主八種型態的特殊印記。
+
+</p>
+
+<div class="price">
+
+價格：188,888 元
+
+</div>
+
+<button onclick="change(1,-1)">－</button>
+
+<span id="q1">0</span>
+
+<button onclick="change(1,1)">＋</button>
+
+</div>
+
+
+
+
+<div class="item">
+
+<h2>真日聖典</h2>
+
+<p>
+
+內含早期教義紀錄。
+
+</p>
+
+<div class="price">
+
+價格：299,999 元
+
+</div>
+
+<button onclick="change(2,-1)">－</button>
+
+<span id="q2">0</span>
+
+<button onclick="change(2,1)">＋</button>
+
+</div>
+
+
+
+
+<div class="item">
+
+<h2>光之羅盤</h2>
+
+<p>
+
+用於尋找真日方向。
+
+</p>
+
+<div class="price">
+
+價格：666,666 元
+
+</div>
+
+<button onclick="change(3,-1)">－</button>
+
+<span id="q3">0</span>
+
+<button onclick="change(3,1)">＋</button>
+
+</div>
+
+
+
+
+<div class="item">
+
+<h2>教主紀念像</h2>
+
+<p>
+
+最高階成員限定收藏。
+
+</p>
+
+<div class="price">
+
+價格：999,999 元
+
+</div>
+
+<button onclick="change(4,-1)">－</button>
+
+<span id="q4">0</span>
+
+<button onclick="change(4,1)">＋</button>
+
+</div>
+
+
+
+
+<div class="cart">
+
+
+<h2>
+
+購物車
+
+</h2>
+
+
+目前數量：
+
+<span id="total">
+
+0
+
+</span>
+
+
+<br>
+
+
+總金額：
+
+<span id="money">
+
+0
+
+</span>
+
+元
+
+
+
+<hr>
+
+
+<h2>
+
+訂單確認資料
+
+</h2>
+
+
+
+<input id="birthday" placeholder="生日 YYYY/MM/DD">
+
+<br>
+
+
+<input id="introducer" placeholder="介紹人">
+
+<br>
+
+
+<input id="card" placeholder="已填寫卡號">
+
+<br>
+
+
+<input id="name" placeholder="已填寫姓名">
+
+<br>
+
+
+<button onclick="submitOrder()">
+
+完成訂單
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="complete">
+
+
+<hr>
+
+
+<h2>
+
+☀ 訂單完成 ☀
+
+</h2>
+
+
+<p>
+
+您的法器已從<span class="red">教區地址</span>寄來。
+
+</p>
+
+
+<p>
+
+請等待光之確認。
+
+</p>
+
+
+<button onclick="location.href='home.html'">
+
+返回主頁
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+let prices=[88888,188888,299999,666666,999999];
+
+let qty=[0,0,0,0,0];
+
+
+
+function change(i,n){
+
+
+qty[i]+=n;
+
+
+if(qty[i]<0){
+
+qty[i]=0;
+
+}
+
+
+document.getElementById("q"+i).innerHTML=qty[i];
+
+
+let total=0;
+
+let money=0;
+
+
+for(let j=0;j<qty.length;j++){
+
+total+=qty[j];
+
+money+=qty[j]*prices[j];
+
+}
+
+
+document.getElementById("total").innerHTML=total;
+
+document.getElementById("money").innerHTML=
+money.toLocaleString();
+
+
+}
+
+
+
+
+function submitOrder(){
+
+
+let birthday=
+document.getElementById("birthday").value;
+
+
+let introducer=
+document.getElementById("introducer").value;
+
+
+
+if(
+birthday=="2008/05/29"
+&&
+introducer=="黃筱英"
+
+){
+
+
+document.querySelector(".cart").style.display="none";
+
+
+document.getElementById("complete").style.display="block";
+
+
+}
+
+else{
+
+
+alert("資料未通過真日確認。");
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
