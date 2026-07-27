@@ -1,19 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
+
 <head>
 <meta charset="UTF-8">
-<title>大日真光會</title>
+<title>真日聖會</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    background:black;
+    color:#FFD700;
+    font-family:'Noto Serif TC',serif;
+    text-align:center;
+    margin-top:80px;
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:white;
+    font-size:26px;
+    font-weight:normal;
+}
+
+.counter{
+    margin-top:60px;
+    font-size:35px;
+    color:#ff4444;
+}
+
+.number{
+    font-size:55px;
+    color:white;
+}
+
+button{
+
+    margin-top:50px;
+
+    background:#660000;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 45px;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    background:red;
+
+    transform:scale(1.08);
+
+}
+
+.footer{
+
+    margin-top:80px;
+
+    color:gray;
+
+    font-size:18px;
+
+}
+
+</style>
+
 </head>
 
-<body style="background:black;color:gold;text-align:center;">
+<body>
 
-<h1>☀ 大日真光會 ☀</h1>
+<h1>☀ 真日聖會 ☀</h1>
 
-<button>加入真日聖會</button>
+<h2>真理並非尋找，而是被選中。</h2>
 
-<p>歡迎有緣人。</p>
+<div class="counter">
 
-<p>你已踏入真理的大門。</p>
+你是第
+
+<div class="number" id="count"></div>
+
+位有緣人。
+
+</div>
+
+<button onclick="location.href='home.html'">
+
+接受真光
+
+</button>
+
+<div class="footer">
+
+Since 1998<br>
+
+Only The Chosen Can Enter.
+
+</div>
+
+<script>
+
+// 隨機訪客數
+let visitor = Math.floor(Math.random()*5000)+25000;
+
+document.getElementById("count").innerHTML=visitor.toLocaleString();
+
+</script>
 
 </body>
+
 </html>
