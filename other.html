@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>真日聖會 - 更多</title>
+
+<style>
+
+body{
+
+background:black;
+color:white;
+font-family:"Microsoft JhengHei";
+text-align:center;
+margin-top:120px;
+
+}
+
+.box{
+
+width:700px;
+margin:auto;
+
+background:#111;
+
+border:3px ridge gray;
+
+padding:40px;
+
+box-shadow:0 0 30px #333;
+
+}
+
+h1{
+
+color:#FFD700;
+
+text-shadow:0 0 15px orange;
+
+}
+
+input{
+
+font-size:24px;
+
+padding:10px;
+
+width:400px;
+
+text-align:center;
+
+background:#222;
+
+color:white;
+
+border:1px solid #777;
+
+}
+
+button{
+
+margin-top:25px;
+
+padding:10px 30px;
+
+font-size:20px;
+
+cursor:pointer;
+
+}
+
+#hint{
+
+margin-top:30px;
+
+color:#999;
+
+display:none;
+
+font-size:22px;
+
+line-height:2;
+
+white-space:pre-line;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>更多</h1>
+
+<hr>
+
+<p>
+
+請輸入最終密碼。
+
+</p>
+
+<input
+id="pw"
+type="text"
+placeholder="Password">
+
+<br>
+
+<button onclick="check()">
+
+確認
+
+</button>
+
+<br><br>
+
+<button onclick="location.href='home.html'">
+
+返回首頁
+
+</button>
+
+<div id="hint">
+
+D♭ ⮕ d2
+
+G# ⮕ A♭ ⮕ a9
+
+F ⮕ F6
+
+</div>
+
+</div>
+
+<script>
+
+function check(){
+
+let pw=document.getElementById("pw").value.trim();
+
+if(
+
+pw=="D3e4A10C19980717"
+
+||
+
+pw=="D3e4C119980717"
+
+){
+
+location.href="secret.html";
+
+}
+
+else{
+
+document.getElementById("hint").style.display="block";
+
+}
+
+}
+
+document.getElementById("pw").addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+
+check();
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
