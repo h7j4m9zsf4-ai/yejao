@@ -19,7 +19,6 @@ padding:40px;
 
 }
 
-
 .box{
 
 width:950px;
@@ -36,7 +35,6 @@ box-shadow:0 0 30px #333;
 
 }
 
-
 h1{
 
 color:#FFD700;
@@ -47,7 +45,6 @@ text-shadow:0 0 15px orange;
 
 }
 
-
 .subtitle{
 
 font-size:22px;
@@ -55,8 +52,6 @@ font-size:22px;
 color:white;
 
 }
-
-
 
 .member{
 
@@ -74,9 +69,23 @@ font-size:20px;
 
 line-height:2;
 
+display:flex;
+
+align-items:stretch;
+
+gap:25px;
+
 }
 
+/* 文字區 */
 
+.text{
+
+flex:1;
+
+}
+
+/* 姓名 */
 
 .name{
 
@@ -88,15 +97,17 @@ font-weight:bold;
 
 }
 
-
+/* 師兄師姐改成普通文字顏色 */
 
 .title{
 
-color:#ff4444;
+color:#ddd;
+
+font-weight:bold;
 
 }
 
-
+/* 捷運站 */
 
 .station{
 
@@ -104,7 +115,7 @@ color:#66ccff;
 
 }
 
-
+/* 成神日唯一紅色線索 */
 
 .secret{
 
@@ -117,6 +128,212 @@ text-shadow:0 0 8px red;
 }
 
 
+/* =========================
+   黑袍肖像
+   ========================= */
+
+.portrait{
+
+width:220px;
+
+min-width:220px;
+
+height:280px;
+
+background:
+
+radial-gradient(
+ellipse at 50% 38%,
+#777 0px,
+#333 25px,
+#111 65px,
+#050505 100px
+);
+
+position:relative;
+
+overflow:hidden;
+
+border:1px solid #333;
+
+box-shadow:
+inset 0 0 35px black,
+0 0 15px #000;
+
+}
+
+
+/* 黑袍 */
+
+.portrait::before{
+
+content:"";
+
+position:absolute;
+
+left:15px;
+
+right:15px;
+
+bottom:-40px;
+
+height:220px;
+
+background:
+
+linear-gradient(
+90deg,
+#020202 0%,
+#151515 35%,
+#050505 50%,
+#151515 65%,
+#020202 100%
+);
+
+clip-path:polygon(
+18% 0%,
+82% 0%,
+100% 100%,
+0% 100%
+);
+
+border-radius:45% 45% 0 0;
+
+}
+
+
+/* 頭罩 */
+
+.portrait::after{
+
+content:"";
+
+position:absolute;
+
+left:47px;
+
+top:22px;
+
+width:126px;
+
+height:150px;
+
+background:
+
+radial-gradient(
+ellipse at 50% 48%,
+#777 0px,
+#444 35px,
+#181818 75px,
+#030303 100px
+);
+
+border-radius:50% 50% 45% 45%;
+
+box-shadow:
+
+inset 0 0 25px #000;
+
+}
+
+
+/* 臉部細節 */
+
+.face{
+
+position:absolute;
+
+z-index:5;
+
+left:78px;
+
+top:68px;
+
+width:65px;
+
+height:90px;
+
+}
+
+
+/* 左眼 */
+
+.face::before{
+
+content:"";
+
+position:absolute;
+
+left:3px;
+
+top:20px;
+
+width:18px;
+
+height:7px;
+
+background:#ddd;
+
+box-shadow:
+
+42px 0 0 #ddd;
+
+transform:rotate(-8deg);
+
+filter:blur(1px);
+
+}
+
+
+/* 嘴巴 */
+
+.face::after{
+
+content:"";
+
+position:absolute;
+
+left:12px;
+
+top:61px;
+
+width:42px;
+
+height:18px;
+
+border-bottom:4px solid #bbb;
+
+border-radius:0 0 50% 50%;
+
+}
+
+
+/* 肖像下方標記 */
+
+.portrait-label{
+
+position:absolute;
+
+z-index:10;
+
+bottom:8px;
+
+left:0;
+
+right:0;
+
+font-size:14px;
+
+text-align:center;
+
+color:#777;
+
+letter-spacing:3px;
+
+}
+
+
+/* 返回 */
 
 a{
 
@@ -128,7 +345,6 @@ text-decoration:none;
 
 }
 
-
 a:hover{
 
 color:red;
@@ -136,10 +352,31 @@ color:red;
 }
 
 
+/* 手機版 */
+
+@media(max-width:700px){
+
+.member{
+
+display:block;
+
+}
+
+.portrait{
+
+width:100%;
+
+height:250px;
+
+margin-bottom:20px;
+
+}
+
+}
+
 </style>
 
 </head>
-
 
 
 <body>
@@ -166,17 +403,41 @@ color:red;
 
 
 
+<!-- =========================
+     陳志明
+     ========================= -->
+
 <div class="member">
 
-<div class="name">
 
-陳志明｜<span class="title">曜侍</span>
+<div class="portrait">
+
+<div class="face"></div>
+
+<div class="portrait-label">
+TRUE SUN ARCHIVE
+</div>
 
 </div>
 
+
+<div class="text">
+
+
+<div class="name">
+
+陳志明｜<span class="title">師兄</span>
+
+</div>
+
+
 <p>
 
-居住地：<span class="station">芝山站</span>
+居住地：
+
+<span class="station">
+芝山站
+</span>
 
 </p>
 
@@ -191,7 +452,7 @@ color:red;
 
 <br><br>
 
-成為曜侍後，我負責協助整理部分早期紀錄。
+成為師兄後，我負責協助整理部分早期紀錄。
 
 在閱讀過去成員留下的文字時，我逐漸理解，許多看似沒有意義的片段，其實都代表某種訊息。
 
@@ -199,7 +460,13 @@ color:red;
 
 我曾在整理資料時，看見一份被標記為最高等級的文件。
 
-其中記載了一個特殊日期，被稱為教主<span class="secret">成神日</span>。
+其中記載了一個特殊日期，被稱為教主
+
+<span class="secret">
+成神日
+</span>
+
+。
 
 關於那一天發生的事情，文件中並沒有留下完整說明。
 
@@ -211,22 +478,37 @@ color:red;
 
 </p>
 
+
+</div>
+
 </div>
 
 
 
+<!-- =========================
+     黃雅雯
+     ========================= -->
 
 <div class="member">
 
+
+<div class="text">
+
+
 <div class="name">
 
-黃雅雯｜<span class="title">月侍</span>
+黃雅雯｜<span class="title">師姐</span>
 
 </div>
 
+
 <p>
 
-居住地：<span class="station">南京三民站</span>
+居住地：
+
+<span class="station">
+南京三民站
+</span>
 
 </p>
 
@@ -239,7 +521,7 @@ color:red;
 
 <br><br>
 
-成為月侍後，我開始協助整理成員紀錄。
+成為師姐後，我開始協助整理成員紀錄。
 
 每一份文件都代表一個人的經歷，也代表他與真日之間產生的連結。
 
@@ -255,27 +537,60 @@ color:red;
 
 </p>
 
+
+</div>
+
+
+<div class="portrait">
+
+<div class="face"></div>
+
+<div class="portrait-label">
+TRUE SUN ARCHIVE
+</div>
+
+</div>
+
+
 </div>
 
 
 
-
-
-
-
+<!-- =========================
+     林國偉
+     ========================= -->
 
 <div class="member">
 
+
+<div class="portrait">
+
+<div class="face"></div>
+
+<div class="portrait-label">
+TRUE SUN ARCHIVE
+</div>
+
+</div>
+
+
+<div class="text">
+
+
 <div class="name">
 
-林國偉｜<span class="title">曜侍</span>
+林國偉｜<span class="title">師兄</span>
 
 </div>
 
 
 <p>
 
-居住地：<span class="station">府中站</span>
+居住地：
+
+<span class="station">
+府中站
+</span>
 
 </p>
 
@@ -288,7 +603,7 @@ color:red;
 
 <br><br>
 
-曜侍的工作讓我有機會接觸不同時期留下的文件。
+師兄的工作讓我有機會接觸不同時期留下的文件。
 
 其中有些內容非常古老，甚至難以判斷最初留下它們的人是誰。
 
@@ -300,12 +615,10 @@ color:red;
 
 </p>
 
+
 </div>
 
-
-
-
-
+</div>
 
 
 
